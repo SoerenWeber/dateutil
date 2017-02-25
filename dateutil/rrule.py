@@ -679,7 +679,7 @@ class rrule(rrulebase):
         output = []
         h, m, s = [None] * 3
         if self._dtstart:
-            output.append(self._dtstart.strftime('DTSTART:%Y%m%dT%H%M%S'))
+            output.append(self._dtstart.strftime('DTSTART:%Y%m%dT%H%M%S%z'))
             h, m, s = self._dtstart.timetuple()[3:6]
 
         parts = ['FREQ=' + FREQNAMES[self._freq]]
